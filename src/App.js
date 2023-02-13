@@ -1,11 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
 import Page from './Page';
-
+import { Provider } from 'react-redux';
+import store from './store/store';
+import View from './View';
 function App() {
   return (
     <div className="App">
-     <Page/>
+     
+      <Provider store={store}>
+       <Page/>
+       <View/>
+     </Provider>
+       
     </div>
   );
 }

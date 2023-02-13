@@ -19,7 +19,7 @@ import SelectProperty from './SelectProperty';
 import {getalldata} from './api';
 import Select from 'react-select';
 import { useDispatch } from 'react-redux';
-import { add1 } from './store/property1Slice';
+import { add2 } from './store/property2Slice';
 
 
 export default function MaxWidthDialog() {
@@ -27,7 +27,6 @@ export default function MaxWidthDialog() {
   const [open, setOpen] = React.useState(false);
  
   const [users,setUsers] = useState([]);
-  
 
   console.log(users);
   
@@ -40,19 +39,20 @@ const getAllUsers=(selectedOptions)=>{
   setUsers(response)
   //console.log(response)
  }
-const ClickOpen = () => {
-  setUsers([]);
-  };
+
  
  
 
 //console.log(users2)
-
+const ClickOpen = () => {
+  setUsers([]);
+  };
+ 
 
 const dispatch=useDispatch()
 useEffect(() => {
       
- dispatch(add1(users))
+ dispatch(add2(users))
 }, [users]);
 const [data,setdata] = useState([]);
 
@@ -90,15 +90,15 @@ const [data,setdata] = useState([]);
      
        
     <div>{users.label ?
+   
     <>
     <div style={{display:"flex"}}>
-      <div style={{width:"90%"}}>
-    <div >{<img src={users.logo} style={{width:"15%",padding:"px",zIndex:"0",position:"relative"}}/>}</div>
-    
-    </div>
+    <div style={{width:"90%"}}>{<img src={users.logo} style={{maxHeight:"40%",padding:"1px",zIndex:"0",position:"relative"}}/>}</div>
      <div style={{width:"10%"}}><img src="https://i.imgur.com/EOKKOUr.png" className='cross'  onClick={() => ClickOpen()}/></div>
 
     </div>
+     
+   
      
     </> 
    

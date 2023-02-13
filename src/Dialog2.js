@@ -11,7 +11,6 @@ import FormControl from '@mui/material/FormControl';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
-
 import Switch from '@mui/material/Switch';
 import { MultiSelect } from "react-multi-select-component";
 import TuneIcon from '@mui/icons-material/Tune';
@@ -19,58 +18,48 @@ import SelectProperty from './SelectProperty';
 import {getalldata} from './api';
 import Select from 'react-select';
 import { useDispatch } from 'react-redux';
-import { add1 } from './store/property1Slice';
+import { add } from './store/cartSlice';
 
-
-export default function MaxWidthDialog() {
+const options = [
+    { label: " Project Plot Area", value: "ProjectPlotArea" },
+    { label: "Green Area", value: "GreenArea" },
+    { label: "Property Status", value: "PropertyStatus" },
+    { label: "Price Range", value: "PriceRange" },
+    { label: "Total Towers", value: "TotalTowers" },
+    { label: "Total Flats", value: "TotalFlats" },
+    { label: "OC Status", value: "OCStatus" },
+    { label: "Density", value: "Density" },
+    { label: "Podium/NonPodium", value: "PodiumNonPodium" },
+    { label: "Approved Bank", value: "ApprovedBank" },
+    { label: "ClubHouse Size", value: "ClubHouseSize" },
+    { label: "Construction Type", value: "ConstructionType" },
+    { label: "Tower Heights", value: "TowerHeights" },
+    { label: "Lift per Tower", value: "LiftperTower" },
+    { label: "Floor vs Flats", value: "FloorvsFlats" },
+    { label: "Possession Date", value: "PossessionDate" },
+    { label: "Lobby", value: "Lobby" },
+    { label: "Distance", value: "Distance" },
+  
+  ];
+export default function Dialog2() {
 
   const [open, setOpen] = React.useState(false);
  
-  const [users,setUsers] = useState([]);
-  
 
-  console.log(users);
-  
-//console.log(selected)
+  const [selected, setSelected] = useState([])
 
-const [ text, setText ] = useState();
-    
-const getAllUsers=(selectedOptions)=>{
-  let response= selectedOptions;
-  setUsers(response)
-  //console.log(response)
- }
-const ClickOpen = () => {
-  setUsers([]);
-  };
+console.log(selected)
+
+  var result = selected.map(person => ( person.value));
  
- 
+  const dispatch= useDispatch();
 
-//console.log(users2)
-
-
-const dispatch=useDispatch()
-useEffect(() => {
-      
- dispatch(add1(users))
-}, [users]);
-const [data,setdata] = useState([]);
-
-    useEffect(() => {
-     getdata()
-     
-   }, []);
-  
-    const getdata = async () => {
-        let response = await getalldata();
-        setdata(response.data);
-    }
+  useEffect(() => {
+    dispatch(add(result))
+   
+   }, [result]);
 
 
-  console.log(data)
-
-
-//console.log(items);
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -89,31 +78,24 @@ const [data,setdata] = useState([]);
       
      
        
-    <div>{users.label ?
-    <>
-    <div style={{display:"flex"}}>
-      <div style={{width:"90%"}}>
-    <div >{<img src={users.logo} style={{width:"15%",padding:"px",zIndex:"0",position:"relative"}}/>}</div>
     
-    </div>
-     <div style={{width:"10%"}}><img src="https://i.imgur.com/EOKKOUr.png" className='cross'  onClick={() => ClickOpen()}/></div>
-
-    </div>
+       
+     <Button  onClick={handleClickOpen}>
      
-    </> 
-   
-      
+     <div className='parameters'>
+     <img src="https://i.imgur.com/aMohEci.png" className='parameterspic' />
+    <div  className='filtertext' >Select The Parameters To Compare</div>
     
-    :<> <Button  onClick={handleClickOpen}>
-      <div style={{display:"block"}}>
-    <img src="https://i.imgur.com/lRwI4Pz.png" style={{width:"30px"}}/>
-    <div>Add Property</div>
-    </div>
-     </Button></>} </div>
+     </div>
+    
+     
+   
+    
+     </Button> 
       
       <Dialog
-        fullWidth='200px'
-        maxWidth='200px'
+        fullWidth='500px'
+        maxWidth='500px'
         open={open}
         onClose={handleClose}
         style={{height:'80vh',overflow:'hidden'}}
@@ -121,7 +103,7 @@ const [data,setdata] = useState([]);
         <DialogTitle style={{textAlign:'center', color:'#ffffff'}}></DialogTitle>
         <DialogContent>
           <DialogContentText style={{textAlign:'center'}}>
-           Select The Property You Like To Compare
+           Select The Parameters To Compare
           </DialogContentText>
           <Box
             noValidate
@@ -137,15 +119,14 @@ const [data,setdata] = useState([]);
             <FormControl >
               <div style={{width:'100%'}}>
            
-              <div style={{width:"100%",marginTop:'5px'}}><Select
-     
-     onChange={getAllUsers}
-     options={data}
-    
-     labelledBy="Select Property"
-     placeholder="Select Property"
-   /></div>
-   
+              <div style={{width:"100%",marginTop:'5px'}}>
+              <MultiSelect
+      options={options}
+   value={selected}
+    onChange={setSelected}
+      
+  />
+   </div>
    
   	</div>
 								

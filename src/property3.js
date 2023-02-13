@@ -11,7 +11,6 @@ import FormControl from '@mui/material/FormControl';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
-
 import Switch from '@mui/material/Switch';
 import { MultiSelect } from "react-multi-select-component";
 import TuneIcon from '@mui/icons-material/Tune';
@@ -19,7 +18,7 @@ import SelectProperty from './SelectProperty';
 import {getalldata} from './api';
 import Select from 'react-select';
 import { useDispatch } from 'react-redux';
-import { add1 } from './store/property1Slice';
+import { add3 } from './store/property3Slice';
 
 
 export default function MaxWidthDialog() {
@@ -27,7 +26,6 @@ export default function MaxWidthDialog() {
   const [open, setOpen] = React.useState(false);
  
   const [users,setUsers] = useState([]);
-  
 
   console.log(users);
   
@@ -40,11 +38,11 @@ const getAllUsers=(selectedOptions)=>{
   setUsers(response)
   //console.log(response)
  }
-const ClickOpen = () => {
+
+ 
+ const ClickOpen = () => {
   setUsers([]);
   };
- 
- 
 
 //console.log(users2)
 
@@ -52,7 +50,7 @@ const ClickOpen = () => {
 const dispatch=useDispatch()
 useEffect(() => {
       
- dispatch(add1(users))
+ dispatch(add3(users))
 }, [users]);
 const [data,setdata] = useState([]);
 
@@ -91,11 +89,8 @@ const [data,setdata] = useState([]);
        
     <div>{users.label ?
     <>
-    <div style={{display:"flex"}}>
-      <div style={{width:"90%"}}>
-    <div >{<img src={users.logo} style={{width:"15%",padding:"px",zIndex:"0",position:"relative"}}/>}</div>
-    
-    </div>
+     <div style={{display:"flex"}}>
+    <div style={{width:"90%"}}>{<img src={users.logo} style={{maxHeight:"40%",padding:"1px",zIndex:"0",position:"relative"}}/>}</div>
      <div style={{width:"10%"}}><img src="https://i.imgur.com/EOKKOUr.png" className='cross'  onClick={() => ClickOpen()}/></div>
 
     </div>
