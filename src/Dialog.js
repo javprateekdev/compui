@@ -28,12 +28,17 @@ export default function MaxWidthDialog() {
  
   const [users,setUsers] = useState([]);
   
+  const [filteredList, setFilteredList] = useState({});
 
-  console.log(users);
+  const [data,setdata] = useState([]);
+  
+  console.log(filteredList);
+
+  
+  //console.log(users);
   
 //console.log(selected)
 
-const [ text, setText ] = useState();
     
 const getAllUsers=(selectedOptions)=>{
   let response= selectedOptions;
@@ -54,7 +59,8 @@ useEffect(() => {
       
  dispatch(add1(users))
 }, [users]);
-const [data,setdata] = useState([]);
+
+
 
     useEffect(() => {
      getdata()
@@ -67,7 +73,7 @@ const [data,setdata] = useState([]);
     }
 
 
-  console.log(data)
+  //console.log(data)
 
 
 //console.log(items);
@@ -78,13 +84,19 @@ const [data,setdata] = useState([]);
   const handleClose = () => {
     setOpen(false);
   };
+ 
 
-  
-
+ const filterCategory=(categoryItem)=>{
+  const result =data.filter((data)=>{
+    return data.Location===categoryItem
+  });
+  setFilteredList(result);
+ }
   
  
   
   return (
+
     <React.Fragment>
       
      
@@ -121,7 +133,15 @@ const [data,setdata] = useState([]);
         <DialogTitle style={{textAlign:'center', color:'#ffffff'}}></DialogTitle>
         <DialogContent>
           <DialogContentText style={{textAlign:'center'}}>
-           Select The Property You Like To Compare
+           Select The Location 
+           <div style={{boxShadow:"0 1px 6px 1px #ccc",marginTop:"2vh"}}>
+           <button class="button-8" role="button"  onClick={()=>filterCategory('Central Noida')}>Central Noida</button>
+           <button class="button-8" role="button" onClick={()=>filterCategory('Noida Extension')}>Noida Extension</button>
+           <button class="button-8" role="button" onClick={()=>filterCategory('Noida Expressway')}>Noida Expressway</button>
+
+           </div>
+          
+           
           </DialogContentText>
           <Box
             noValidate
@@ -136,11 +156,13 @@ const [data,setdata] = useState([]);
           >
             <FormControl >
               <div style={{width:'100%'}}>
-           
-              <div style={{width:"100%",marginTop:'5px'}}><Select
+              <div style={{textAlign:"center",marginTop:"3vh",color:"#00000099"}}>Select Property</div>
+              <div style={{width:"100%",marginTop:'5vh'}}>
+                
+                <Select
      
      onChange={getAllUsers}
-     options={data}
+     options={filteredList}
     
      labelledBy="Select Property"
      placeholder="Select Property"
@@ -161,3 +183,4 @@ const [data,setdata] = useState([]);
     </React.Fragment>
   );
 }
+

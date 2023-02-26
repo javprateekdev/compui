@@ -27,12 +27,13 @@ export default function MaxWidthDialog() {
  
   const [users,setUsers] = useState([]);
 
+  const [filteredList, setFilteredList] = useState({});
+
   console.log(users);
   
 //console.log(selected)
 
-const [ text, setText ] = useState();
-    
+
 const getAllUsers=(selectedOptions)=>{
   let response= selectedOptions;
   setUsers(response)
@@ -77,7 +78,13 @@ const [data,setdata] = useState([]);
     setOpen(false);
   };
 
-  
+    
+  const filterCategory=(categoryItem)=>{
+    const result =data.filter((data)=>{
+      return data.Location===categoryItem
+    });
+    setFilteredList(result);
+   }
 
   
  
@@ -116,7 +123,13 @@ const [data,setdata] = useState([]);
         <DialogTitle style={{textAlign:'center', color:'#ffffff'}}></DialogTitle>
         <DialogContent>
           <DialogContentText style={{textAlign:'center'}}>
-           Select The Property You Like To Compare
+          Select The Location 
+           <div style={{boxShadow:"0 1px 6px 1px #ccc",marginTop:"2vh"}}>
+           <button class="button-8" role="button" onClick={()=>filterCategory('Central Noida')}>Central Noida</button>
+           <button class="button-8" role="button" onClick={()=>filterCategory('Noida Extension')} >Noida Extension</button>
+           <button class="button-8" role="button" onClick={()=>filterCategory('Noida Expressway')}>Noida Expressway</button>
+
+           </div>
           </DialogContentText>
           <Box
             noValidate
@@ -131,15 +144,17 @@ const [data,setdata] = useState([]);
           >
             <FormControl >
               <div style={{width:'100%'}}>
-           
-              <div style={{width:"100%",marginTop:'5px'}}><Select
-     
+              <div style={{textAlign:"center",marginTop:"3vh",color:"#00000099"}}>Select Property</div>
+              <div style={{width:"100%",marginTop:'5vh'}}>
+                
+    <Select 
      onChange={getAllUsers}
-     options={data}
-    
+     options={filteredList}
      labelledBy="Select Property"
      placeholder="Select Property"
-   /></div>
+   />
+   
+   </div>
    
    
   	</div>

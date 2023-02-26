@@ -134,7 +134,19 @@
   width: 250px!important;
 }
 .filterrow{
-  background:#e2f5cc;
+  background:#dfe3db;
+  height:3vh;
+  border-right:3px solid #f5fcf6;
+  border-bottom:2px solid #f5fcf6;
+  color:#757575;
+  font-weight:600;
+  text-align:right;
+  padding:1vh;
+  font-size:18px;
+  width:18%
+}
+.filterrowacc{
+  background:#b7f179;
   height:3vh;
   border-right:3px solid #f5fcf6;
   border-bottom:2px solid #f5fcf6;
@@ -146,7 +158,7 @@
   width:18%
 }
 .filterrowfloor{
-  background:#e2f5cc;
+  background:#dfe3db;
   height:6vh;
   border-right:3px solid #f5fcf6;
   border-bottom:2px solid #f5fcf6;
@@ -180,7 +192,19 @@
   width:60px
 }
 .propertyrow{
-  background:#cae2fc;
+  background:#eee;
+  height:3vh;
+  border-right:3px solid #f5fcf6;
+  border-bottom:2px solid #f5fcf6;
+  color:black;
+  font-Weight:400;
+  text-Align:center;
+  padding:1vh;
+  font-size:16px;
+  width:26%
+}
+.div1{
+  background:#bb85c2;
   height:3vh;
   border-right:3px solid #f5fcf6;
   border-bottom:2px solid #f5fcf6;
@@ -240,16 +264,16 @@
 
 }
 .change:hover .propertyrowfloor{
- background:#eee !important;
+ background:#cae2fc!important;
 }
 .change:hover .propertyrowfloor2{
-  background:#eee !important;
+  background:#cae2fc !important;
  }
 .change:hover .propertyrow{
-  background:#eee !important;
+  background:#cae2fc!important;
  }
  .change:hover .propertyrow2{
-  background:#eee !important;
+  background:#cae2fc!important;
  }
 .css-zw3mfo-MuiModal-root-MuiDialog-root {
   position: fixed;
@@ -260,7 +284,7 @@
   left: 20%!important;
 }
 .distance{
-  background:#e2f5cc;
+  background:#dfe3db;
   height:15vh;
   border-right:3px solid #f5fcf6;
   border-bottom:2px solid #f5fcf6;
@@ -274,7 +298,7 @@
   line-height: 12vh;
 }
 .distancerow{
-  background:#cae2fc;
+  background:#eee;
   height:15vh;
   border-right:3px solid #f5fcf6;
   border-bottom:2px solid #f5fcf6;
@@ -299,11 +323,20 @@
   width:26%;
   
 }
+.nav{
+  width: 100%;
+  height: 6vh;
+  background: #ffffff;
+  margin-bottom: 2%;
+  padding: 16px 5px 5px;
+  display: flex;
+  box-shadow: 0 1px 0px 1px #d1cece61;
+}
 .change:hover .distancerow{
-  background:#eee !important;
+  background:#cae2fc!important;
  }
  .change:hover .distancerow2{
-  background:#eee !important;
+  background:#cae2fc !important;
  }
 .filterrowbank{
   background:#e2f5cc;
@@ -388,7 +421,7 @@
   margin:1%;
 }
 .filtertext{
-font-size:15px;
+font-size:14px;
 font-weight:650;
 text-Align:center
 }
@@ -444,16 +477,200 @@ text-Align:center
 }
 .filterrow{
   background:#e2f5cc;
-  height:3vh;
+  height:8vh;
   border-right:3px solid #f5fcf6;
   border-bottom:2px solid #f5fcf6;
   color:#757575;
   font-weight:600;
   text-align:right;
-  font-size:18px;
-  width:14%
+  font-size:10px;
+  width:20%
 }
-.margin{
-  width:100%
+.propertyrowfloormob{
+  background:#cae2fc;
+  height:6vh;
+  border-right:3px solid #f5fcf6;
+  border-bottom:2px solid #f5fcf6;
+  color:black;
+  font-Weight:400;
+  text-Align:center;
+  padding:1vh;
+  font-size:16px;
+  width:26%
 }
+.propertyrow{
+  background:#cae2fc;
+  height:8vh;
+  border-right:3px solid #f5fcf6;
+  border-bottom:2px solid #f5fcf6;
+  color:black;
+  font-Weight:400;
+  text-Align:center;
+  padding:1vh;
+  font-size:10px;
+  width:26%
+}
+.propertyrow2{
+  background:#a8d7c36b;
+  height:8vh;
+  border-right:3px solid #f5fcf6;
+  border-bottom:2px solid #f5fcf6;
+  color:black;
+  font-Weight:400;
+  text-Align:center;
+  padding:1vh;
+  font-size:10px;
+  width:26%
+}
+.distancerow{
+  background:#cae2fc;
+  height:60vh;
+  border-right:3px solid #f5fcf6;
+  border-bottom:2px solid #f5fcf6;
+  color:black;
+  font-Weight:400;
+  text-Align:left;
+  padding:1vh;
+  font-size:16px;
+  width:26%;
+  
+}
+.filterrowfloor{
+  background:#e2f5cc;
+  height:6vh;
+  border-right:3px solid #f5fcf6;
+  border-bottom:2px solid #f5fcf6;
+  color:#757575;
+  font-weight:600;
+  text-align:right;
+  padding:1vh;
+  font-size:14px;
+  width:22%
+}
+.ibutton{
+  width:6px
+}
+
+}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+.propertyrowfloormob{
+  background:#eee;
+  height:6vh;
+  border-right:3px solid #f5fcf6;
+  border-bottom:2px solid #f5fcf6;
+  color:black;
+  font-Weight:400;
+  text-Align:center;
+  padding:1vh;
+  font-size:16px;
+  width:26%
+}
+
+.ibutton{
+  width:12px
+}
+summary {
+	list-style: none;
+}
+
+summary::-webkit-details-marker {
+	display: none;
+}
+
+summary {
+	border: 2px solid #000;
+	padding: .75em 1em;
+	cursor: pointer;
+	position: relative;
+	padding-left: calc(1.75rem + .75rem + .75rem);
+}
+
+summary:before {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: .75rem;
+	content: "+";
+	width: 1.75rem;
+	height: 1.75rem;
+	background-color: #000;
+	color: #FFF;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	flex-shrink: 0;
+}
+
+details[open] summary {
+	background-color: #eee;
+}
+
+details[open] summary:before {
+	content: "-";
+}
+
+summary:hover {
+	background-color: #cae2fc;
+}
+
+a {
+	color: inherit;
+	font-weight: 600;
+	text-decoration: none;
+	box-shadow: 0 1px 0 0;
+}
+
+a:hover {
+	box-shadow: 0 3px 0 0;
+}
+
+code {
+	font-family: monospace;
+	font-weight: 600;
+}
+
+
+
+/* CSS */
+.button-8 {
+  background-color: #e1ecf4;
+  border-radius: 3px;
+  border: 1px solid #7aa7c7;
+  box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #39739d;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.15385;
+  margin: 10px;
+  outline: none;
+  padding: 8px .8em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.button-8:hover,
+.button-8:focus {
+  background-color: #dfb3ea;
+  color: #2c5777;
+}
+
+.button-8:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+}
+
+.button-8:active {
+  background-color: #e48fe4;
+  box-shadow: none;
+  color: #2c5777;
 }

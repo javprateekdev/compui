@@ -114,6 +114,7 @@ if(filteredUsers4.label==filteredUsers3.label){
               <></>
             )}
           </div>
+         
           <div>
             {filteredUsers4.ProjectPlotArea ? (
               <div className="change">
@@ -256,12 +257,12 @@ if(filteredUsers4.label==filteredUsers3.label){
             {filteredUsers4.Density ? (
               <div className="change">
                 <div className="filterrow">Density - Tower Wise<button
-                    style={{ background: "#e2f5cc", border: "none",lineHeight: "6vh",verticalAlign:"middle" }}
+                    style={{ background: "#dfe3db", border: "none",lineHeight: "6vh",verticalAlign:"middle" }}
                     title="Tower Area / Property Area"
                   >
                     <img
                       src="https://i.imgur.com/q3yg28r.png"
-                      style={{ width: "15px" }}
+                      className='ibutton' style={{ width: "15px" }}
                     />
                   </button></div>
                 <div className="propertyrow">{filteredUsers.Density}</div>
@@ -276,7 +277,7 @@ if(filteredUsers4.label==filteredUsers3.label){
             {filteredUsers4.Density ? (
               <div className="change">
                 <div className="filterrow">Density - Flat Wise<button
-                    style={{ background: "#e2f5cc", border: "none",lineHeight: "6vh",verticalAlign:"middle" }}
+                    style={{ background: "#dfe3db", border: "none",lineHeight: "6vh",verticalAlign:"middle" }}
                     title="Flat Area / Tower Area"
                   >
                     <img
@@ -296,7 +297,7 @@ if(filteredUsers4.label==filteredUsers3.label){
             {filteredUsers4.FloorvsFlats ? (
               <div className="change">
                 <div className="filterrowfloor">{filteredUsers4.FloorvsFlats}<button
-                    style={{ background: "#e2f5cc", border: "none",lineHeight: "6vh",verticalAlign:"middle" }}
+                    style={{ background: "#dfe3db", border: "none",lineHeight: "6vh",verticalAlign:"middle" }}
                     title="No. of Flats Per Floor"
                   >
                     <img
@@ -305,7 +306,7 @@ if(filteredUsers4.label==filteredUsers3.label){
                     />
                   </button></div>
 
-                <div className="propertyrowfloor">
+                <div className="propertyrowfloormob">
                   <div style={{display:"block"}}>
                   {filteredUsers.FloorvsFlats ?(<>
                   {select.FloorvsFlats?(<div style={{margin:"1%"}}> {select.FloorvsFlats}</div>):(<></>)}
@@ -327,7 +328,7 @@ if(filteredUsers4.label==filteredUsers3.label){
                   }
                  </div>
                   </div>
-                  <div className="propertyrowfloor">
+                  <div className="propertyrowfloormob">
                   <div style={{display:"block"}}>
                   {filteredUsers.FloorvsFlats ?(<>
                   {select3.FloorvsFlats?(<div style={{margin:"1%"}}> {select3.FloorvsFlats}</div>):(<></>)}
